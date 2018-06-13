@@ -2,25 +2,6 @@
 
 console.log('utils loaded');
 
-function saveToStorage(key, any) {
-    try {
-        localStorage.setItem(key, JSON.stringify(any));
-    } catch (err) {
-        console.error('Problem saving to storage', err);
-    }
-}
-
-function loadFromStorage(key) {
-    var any = null;
-    try {
-        any = JSON.parse(localStorage.getItem(key));
-    } catch (err) {
-        console.warn('Removing Corrupted data from storage', err);
-        localStorage.removeItem(key);
-    }
-    return any;
-}
-
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -37,6 +18,7 @@ function getRandomColor() {
     return color;
 }
 
+// Good isPrime function
 function isPrime(num) {
 	if (num < 2)          return false;
 	if (num === 2)        return true;
